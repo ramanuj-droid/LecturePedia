@@ -1,0 +1,114 @@
+/* ===============================
+   HEADER SECTION (Gradient BG)
+================================ */
+.header-section {
+  width: 100%;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
+/* ===============================
+   HEADER CONTAINER
+================================ */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ===============================
+   NAVBAR (DESKTOP)
+================================ */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* ✅ proper spacing */
+}
+
+/* ===============================
+   NAV LINKS
+================================ */
+.nav-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* prevents collapse */
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* ===============================
+   DESKTOP NAV WRAPPER
+================================ */
+.desktop-nav {
+  display: flex;
+}
+
+/* ===============================
+   MOBILE MENU TOGGLE (☰)
+================================ */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ===============================
+   MOBILE NAV DROPDOWN
+================================ */
+.mobile-nav {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  min-width: 160px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile nav links */
+.mobile-nav .nav-link {
+  color: #111827;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+}

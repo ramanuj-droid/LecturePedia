@@ -1,0 +1,73 @@
+/* ===============================
+   FOOTER SECTION
+================================ */
+.footer-section {
+  width: 100%;
+  background: #111827;
+  color: #ffffff;
+  padding: 50px 20px;
+}
+
+/* MAIN FOOTER */
+.footer {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* BRAND */
+.footer-brand h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #9ca3af;
+  max-width: 250px;
+}
+
+/* COLUMNS */
+.footer-columns {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* COLUMN */
+.footer-column h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* LINKS */
+.footer-link {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-columns {
+    justify-content: center;
+  }
+}
