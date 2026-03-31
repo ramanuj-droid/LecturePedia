@@ -1,0 +1,66 @@
+/* ===============================
+   VIDEO SECTION
+================================ */
+.video-section {
+  width: 100%;
+  padding: 20px;
+}
+
+/* LAYOUT */
+.video-player {
+  display: flex;
+  gap: 20px;
+}
+
+/* VIDEO */
+.video-container {
+  flex: 2;
+}
+
+.video-container video {
+  border-radius: 10px;
+}
+
+/* TITLE */
+.video-container h3 {
+  margin-top: 10px;
+}
+
+/* LECTURE LIST */
+.lecture-list {
+  flex: 1;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* ITEM */
+.lecture-item {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  background: white;
+  transition: 0.2s;
+}
+
+.lecture-item:hover {
+  background: #e5e7eb;
+}
+
+/* ACTIVE */
+.lecture-item.active {
+  background: #4f46e5;
+  color: white;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .video-player {
+    flex-direction: column;
+  }
+}

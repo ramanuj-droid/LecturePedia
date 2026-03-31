@@ -5,7 +5,13 @@ const SidebarMenu = ({ items }) => {
   return (
     <div className="sidebar-menu">
       {items.map((item, index) => (
-        <SidebarItem key={index} {...item} />
+        <SidebarItem
+          key={index}
+          icon={item.icon}
+          label={item.label}
+          onClick={item.onClick}      
+          isActive={item.isActive}   
+        />
       ))}
     </div>
   );
