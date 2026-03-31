@@ -1,25 +1,68 @@
 import React from "react";
-import Input from "../atoms/Input";
-import Button from "../atoms/Button";
 
-const AuthForm = ({ type }) => {
+const AuthForm = ({
+  type,
+  formData,
+  handleChange,
+  handleSubmit,
+  loading,
+  error
+}) => {
   return (
     <div className="auth-form">
+
+      {/* REGISTER FIELDS */}
       {type === "register" && (
         <>
-          <Input placeholder="Full Name" />
-          <Input placeholder="Department" />
+          <input
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="auth-input"
+          />
+          <input
+            name="department"
+            placeholder="Department"
+            value={formData.department}
+            onChange={handleChange}
+            className="auth-input"
+          />
         </>
       )}
 
-      <Input type="email" placeholder="Email" />
-      <Input type="password" placeholder="Password" />
+      {/* EMAIL */}
+      <input
+        name="email"
+        type="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+        className="auth-input"
+      />
 
+      {/* PASSWORD */}
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        value={formData.password}
+        onChange={handleChange}
+        className="auth-input"
+      />
+
+      {/* FORGOT */}
       {type === "login" && (
         <div className="forgot">Forgot Password?</div>
       )}
 
-      <Button text={type === "login" ? "Login" : "Register"} />
+      {/* ERROR */}
+      {error && <div className="error">{error}</div>}
+
+      {/* BUTTON */}
+      <button className="auth-button" onClick={handleSubmit}>
+        {loading ? "Please wait..." : type === "login" ? "Login" : "Register"}
+      </button>
     </div>
   );
 };
