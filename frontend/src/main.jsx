@@ -13,6 +13,13 @@ import "./styles/profile.scss";
 import "./styles/progress.scss";
 import "./styles/certificate.scss";
 import "./styles/courses.scss";
+import "./styles/admin.scss";
+import "./styles/aboutHero.scss";
+import "./styles/aboutCard.scss";
+import "./styles/aboutCertificate.scss";
+import "./styles/contactFeedBack.scss";
+import "./styles/contactFounder.scss";
+
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

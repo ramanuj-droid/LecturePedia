@@ -1,0 +1,73 @@
+.contact-feedback {
+  padding: 70px 5%;
+  background: #ffffff;
+  text-align: center;
+
+  .header {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 32px;
+      color: #2c2c54;
+    }
+
+    p {
+      color: #666;
+      margin-top: 8px;
+    }
+  }
+}
+
+.feedback-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-input,
+.contact-textarea {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+
+    &:focus {
+      border-color: #6c63ff;
+    }
+  }
+}
+
+.feedback-btn {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #6c63ff, #7f53ff);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .feedback-form {
+    width: 100%;
+  }
+}

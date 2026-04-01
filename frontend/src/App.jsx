@@ -9,6 +9,10 @@ import Profile from "./pages/Profile";
 import Progress from "./pages/Progress";
 import Certificate from "./pages/Certificate";
 import Courses from "./pages/Courses";
+import Admin from "./pages/Admin";
+import About from "./pages/About";       
+import Contact from "./pages/Contact";   
+
 // Auth
 import useAuth from "./hooks/useAuth";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -25,20 +29,18 @@ const App = () => {
         {/* Root Route */}
         <Route
           path="/"
-          element={
-            user ? <Navigate to="/dashboard" /> : <Navigate to="/auth" />
-          }
+          element={user ? <Navigate to="/dashboard" /> : <Navigate to="/auth" />}
         />
 
-        {/* Auth Page */}
+        {/* Public Pages */}
         <Route
           path="/auth"
-          element={
-            user ? <Navigate to="/dashboard" /> : <AuthPage />
-          }
+          element={user ? <Navigate to="/dashboard" /> : <AuthPage />}
         />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
 
-        {/* Dashboard */}
+        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
@@ -48,7 +50,6 @@ const App = () => {
           }
         />
 
-        {/* 🎬 Course Player */}
         <Route
           path="/course/:id"
           element={
@@ -58,44 +59,51 @@ const App = () => {
           }
         />
 
-<Route
-  path="/profile"
-  element={
-    <ProtectedRoute>
-      <Profile />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
 
+        <Route
+          path="/progress"
+          element={
+            <ProtectedRoute>
+              <Progress />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/progress"
-  element={
-    <ProtectedRoute>
-      <Progress />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/certificate/:id"
+          element={
+            <ProtectedRoute>
+              <Certificate />
+            </ProtectedRoute>
+          }
+        />
 
+        <Route
+          path="/courses"
+          element={
+            <ProtectedRoute>
+              <Courses />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/certificate/:id"
-  element={
-    <ProtectedRoute>
-      <Certificate />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
 
-
-<Route
-  path="/courses"
-  element={
-    <ProtectedRoute>
-      <Courses />
-    </ProtectedRoute>
-  }
-/>
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" />} />
 
