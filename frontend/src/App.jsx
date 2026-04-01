@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard";
 import CoursePage from "./pages/CoursePage";
 import Profile from "./pages/Profile";
 import Progress from "./pages/Progress";
+import Certificate from "./pages/Certificate";
+import Courses from "./pages/Courses";
 // Auth
 import useAuth from "./hooks/useAuth";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -71,6 +73,26 @@ const App = () => {
   element={
     <ProtectedRoute>
       <Progress />
+    </ProtectedRoute>
+  }
+/>
+
+
+<Route
+  path="/certificate/:id"
+  element={
+    <ProtectedRoute>
+      <Certificate />
+    </ProtectedRoute>
+  }
+/>
+
+
+<Route
+  path="/courses"
+  element={
+    <ProtectedRoute>
+      <Courses />
     </ProtectedRoute>
   }
 />

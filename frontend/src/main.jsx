@@ -6,11 +6,14 @@ import "./styles/header.scss";
 import "./styles/auth.scss";
 import "./styles/ad.scss";
 import "./styles/footer.scss";
+import "./styles/features.scss";
 import "./styles/sidebar.scss";
 import "./styles/video.scss";
 import "./styles/profile.scss";
 import "./styles/progress.scss";
-import "./styles/features.scss";
+import "./styles/certificate.scss";
+import "./styles/courses.scss";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
