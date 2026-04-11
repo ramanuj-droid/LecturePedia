@@ -1,4 +1,6 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+console.log("API URL:", import.meta.env.VITE_API_URL);
 
 export const api = {
   register: async (data) => {
@@ -7,6 +9,7 @@ export const api = {
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: "include", // 🔥 add here too
       body: JSON.stringify(data)
     });
 
@@ -19,7 +22,7 @@ export const api = {
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include", // 🍪 important
+      credentials: "include",
       body: JSON.stringify(data)
     });
 
