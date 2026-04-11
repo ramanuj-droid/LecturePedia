@@ -21,11 +21,13 @@ export const login = async (req, res, next) => {
   try {
     const data = await loginUser(req.body);
 
-    // 🍪 Set cookie
+    const isProduction = process.env.NODE_ENV === "production";
+
+    
     res.cookie("token", data.token, {
       httpOnly: true,
-      secure: false, // true in production (HTTPS)
-      sameSite: "Lax",
+      secure: isProduction,                
+      sameSite: isProduction ? "None" : "Lax", 
       maxAge: 24 * 60 * 60 * 1000
     });
 
@@ -42,7 +44,11 @@ export const logout = async (req, res, next) => {
   try {
     await logoutUser(req.user._id);
 
-    res.clearCookie("token");
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax"
+    });
 
     res.json({
       success: true,

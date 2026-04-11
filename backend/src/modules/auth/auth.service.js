@@ -35,9 +35,12 @@ export const loginUser = async ({ email, password, deviceId }) => {
     throw new Error("Account already in use on another device");
   }
 
-  const token = jwt.sign({ userId: user._id }, "SECRET", {
-    expiresIn: "1d"
-  });
+  // ✅ Use ENV variable
+  const token = jwt.sign(
+    { userId: user._id },
+    process.env.JWT_SECRET,
+    { expiresIn: "1d" }
+  );
 
   user.activeSession = {
     token,
@@ -52,6 +55,9 @@ export const loginUser = async ({ email, password, deviceId }) => {
 
 export const logoutUser = async (userId) => {
   const user = await User.findById(userId);
+
+  if (!user) throw new Error("User not found");
+
   user.activeSession = null;
   await user.save();
 };
